@@ -11,7 +11,7 @@ export function BackgroundBoxesDemo() {
 
       <Boxes />
       <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
-        This is Janmejay, Work's under progress
+        This is Janmejay, Work&apos;s under progress
       </h1>
       <p className="text-center mt-2 text-neutral-300 relative z-20">
         Just hover and play with the squares for now. Text me at 7976803063 if you need a website built for you
