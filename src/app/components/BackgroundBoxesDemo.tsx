@@ -14,7 +14,7 @@ export function BackgroundBoxesDemo() {
         This is Janmejay, Work&apos;s under progress
       </h1>
       <p className="text-center mt-2 text-neutral-300 relative z-20">
-        Just hover and play with the squares for now. Text me at 7976803063 if you need a website built for you
+        Text me at 7976803063 if you need a website built for you
       </p>
     </div>
   );
