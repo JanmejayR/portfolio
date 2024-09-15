@@ -1,3 +1,587 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles/globals.css */
+
+:root {
+  
+    --black: oklch(0% 0 0);
+    --white: oklch(100% 0 0);
+    --bezierFastoutSlowin: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --durationXS: 200ms;
+    --durationS: 300ms;
+    --durationM: 400ms;
+    --durationL: 600ms;
+    --durationXL: 800ms;
+    --delay : 300ms;
+  
+    /* Font stacks */
+    --systemFontStack: system-ui, -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Ubuntu, Helvetica Neue, sans-serif;
+    --fontStack: Gotham, var(--systemFontStack);
+    --monoFontStack: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    --japaneseFontStack: IPA Gothic, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Hiragino Sans, Osaka, メイリオ, Meiryo, Segoe UI, sans-serif;
+  
+    /* Font weights */
+    --fontWeightRegular: 400;
+    --fontWeightMedium: 500;
+    --fontWeightBold: 700;
+  
+    /* Font sizes */
+    --fontSizeH0: 8.75rem;
+    --fontSizeH1: 6.25rem;
+    --fontSizeH2: 3.625rem;
+    --fontSizeH3: 2.375rem;
+    --fontSizeH4: 1.75rem;
+    --fontSizeH5: 1.5rem;
+    --fontSizeBodyXL: 1.375rem;
+    --fontSizeBodyL: 1.25rem;
+    --fontSizeBodyM: 1.125rem;
+    --fontSizeBodyS: 1rem;
+    --fontSizeBodyXS: 0.875rem;
+  
+    /* Other global styles */
+    --lineHeightTitle: 1.1;
+    --lineHeightBody: 1.6;
+    --maxWidthS: 540px;
+    --maxWidthM: 720px;
+    --maxWidthL: 1096px;
+    --maxWidthXL: 1680px;
+    --spaceOuter: 64px;
+    --spaceXS: 4px;
+    --spaceS: 8px;
+    --spaceM: 16px;
+    --spaceL: 24px;
+    --spaceXL: 32px;
+    --space2XL: 48px;
+    --space3XL: 64px;
+    --space4XL: 96px;
+    --space5XL: 128px;
+    --zIndex0: 0;
+    --zIndex1: 4;
+    --zIndex2: 8;
+    --zIndex3: 16;
+    --zIndex4: 32;
+    --zIndex5: 64;
+}
+/* Dark theme */
+[data-theme='dark'] {
+  --background: oklch(17.76% 0 0);
+  --backgroundLight: oklch(21.78% 0 0);
+  --primary: oklch(84.42% 0.19 202.24);
+  --accent: oklch(84.42% 0.19 202.24);
+  --error: oklch(65.91% 0.249 13.76);
+  --text: var(--white);
+  --textTitle: var(--text);
+  --textBody: color-mix(in lab, var(--text) 80%, transparent);
+  --textLight: color-mix(in lab, var(--text) 60%, transparent);
+
+  --AboutText: var(--accent);
+  --iconHover: var(--text);
+  --MyProjects: var(--textBody);
+
+  --inputBg : oklch(40% 0 0);
+  --msgBtn : var(--white);
+  --msgBtnHover : var(--textBody);
+ 
+}
+
+/* Light theme */
+[data-theme='light'] {
+  --background: oklch(96.12% 0 0);
+  --backgroundLight: var(--white);
+  --primary: var(--black);
+  --accent: oklch(84.42% 0.19 202.24);
+  --error: oklch(63.17% 0.259 25.41);
+  --text: var(--black);
+  --textTitle: color-mix(in lab, var(--text) 90%, transparent);
+  --textBody: color-mix(in lab, var(--text) 75%, transparent);
+  --textLight: color-mix(in lab, var(--text) 55%, transparent);
+
+  --AboutText: var(--textTitle);
+  --iconHover: var(--text);
+  --MyProjects: var(--textTitle);
+  --inputBg: var(--white);
+  --msgBtn :oklch(50% 0 0);
+
+  --msgBtnHover :oklch(30% 0 0);
+  
+  
+}
+
+/* Font face definitions */
+@font-face {
+  font-family: Gotham;
+  font-weight: 400;
+  src: url(/static/fonts/gotham-book.woff2) format('woff2');
+  font-display: block;
+  font-style: normal;
+}
+@font-face {
+  font-family: Gotham;
+  font-weight: 400;
+  src: url(/static/fonts/gotham-book-italic.woff2) format('woff2');
+  font-display: block;
+  font-style: italic;
+}
+@font-face {
+  font-family: Gotham;
+  font-weight: 500;
+  src: url(/static/fonts/gotham-medium.woff2) format('woff2');
+  font-display: block;
+  font-style: normal;
+}
+@font-face {
+  font-family: Gotham;
+  font-weight: 500;
+  src: url(/static/fonts/gotham-medium-italic.woff2) format('woff2');
+  font-display: block;
+  font-style: italic;
+}
+@font-face {
+  font-family: Gotham;
+  font-weight: 700;
+  src: url(/static/fonts/gotham-bold.woff2) format('woff2');
+  font-display: block;
+  font-style: normal;
+}
+@font-face {
+  font-family: Gotham;
+  font-weight: 700;
+  src: url(/static/fonts/gotham-bold-italic.woff2) format('woff2');
+  font-display: block;
+  font-style: italic;
+}
+@font-face {
+  font-family: IPA Gothic;
+  font-weight: 400;
+  src: url(/static/fonts/ipa-gothic.woff2) format('woff2');
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Custom classes */
+
+
+.word {
+  color: var(--text);
+}
+
+/* Styles for Decoder Text Component */
+.DecoderText-text::after {
+  content: '_';
+  visibility: hidden;
+}
+
+.DecoderText-glyph {
+  opacity: 0.8;
+    font-weight: 400;
+    font-family: var(--japaneseFontStack);
+    line-height: 0;
+}
+
+.DecoderText-value {
+  opacity: 1;
+}
+
+
+
+.Intro-name {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--textLight);
+  /* margin-bottom: var(--space2XL); */
+  margin-top: 0;
+  font-weight: var(--fontWeightMedium);
+  line-height: 1;
+  opacity: 1;
+  /* transition: opacity var(--durationL) var(--bezierFastoutSlowin) 0.2s; */
+/* 
+  @media (min-width:2080px) {
+    font-size: calc((22 / 16) * 1rem);
+    margin-bottom: var(--spaceXL);
+  }
+
+  @media (min-width:1040px) {
+    font-size: calc((18 / 16) * 1rem);
+  }
+
+  @media (min-width:696px) {
+    margin-bottom: var(--spaceL);
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  @media (max-width: 820px) and (max-height: 420px) {
+    margin-bottom: var(--spaceL);
+    margin-bottom: var(--spaceXL);
+  } */
+}
+
+
+
+@keyframes introLine {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.Intro-line {
+  background: color-mix(in lab, var(--text) 30%, transparent);
+}
+
+.Intro-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.Intro-row:[data-hidden='true'] {
+  opacity: 0;
+}
+
+@keyframes introTextReveal {
+  0% {
+    color: color-mix(in lab, var(--text) 0%, transparent);
+  }
+  50% {
+    color: color-mix(in lab, var(--text) 0%, transparent);
+  }
+  60% {
+    color: var(--textTitle);
+  }
+  100% {
+    color: var(--textTitle);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    transform: scale3d(0, 1, 1);
+    transform-origin: left;
+  }
+  50% {
+    transform: scale3d(1, 1, 1);
+    transform-origin: left;
+  }
+  51% {
+    transform: scale3d(1, 1, 1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scale3d(0, 1, 1);
+    transform-origin: right;
+  }
+}
+
+.Intro-word {
+  position: relative;
+  display: flex;
+  opacity:0;
+  flex-shrink: 0;
+  align-items: center;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  animation-duration: 1.5s;
+  animation-delay: var(--delay);
+  animation-fill-mode: forwards;
+  animation-timing-function: var(--bezierFastoutSlowin);
+  color: color-mix(in lab, var(--text) 0%, transparent); 
+  transition: opacity 0.5s ease var(--durationM);
+  isolation: isolate;
+}
+
+.Intro-word::after {
+  content: '';
+  opacity:1;
+  background: var(--accent);
+  animation-duration: 1.5s;
+    animation-delay: var(--delay);
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--bezierFastoutSlowin);
+    transform-origin: left;
+  transform: scale3d(0, 1, 1);
+  position: absolute;
+  inset: 0 -0.02em 0 0;
+  z-index: var(--zIndex1);
+  will-change: transform;
+}
+
+.Intro-word[data-plus='true']::before {
+  content: '+';
+  margin-right: 10px;
+  opacity: 0.4;
+}
+
+
+.Intro-word[data-status='entering'] {
+  animation-name: introTextReveal;
+  opacity:1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Intro-word[data-status='entering']::after {
+    animation-name: reveal;
+    opacity:1;
+  }
+}
+
+.Intro-word[data-status='entered'] {
+  color: var(--textTitle);
+  opacity:1;
+}
+
+.Intro-word[data-status='entered']::after {
+  opacity: 1;
+  transform: scale3d(0, 0, 1);
+  transform-origin: right;
+}
+
+.Intro-word[data-status='exiting'] {
+  color: var(--textTitle);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: var(--zIndex0);
+
+}
+
+
+
+/*Live link button*/
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+  border: 2px solid;
+  border-color: var(--textBody);
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--textBody); 
+  box-shadow: 0 0 0 2px #1e1e1e;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: #1e1e1e;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #1e1e1e;
+  border-radius: 12px;
+  border: transparent;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #1e;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #fd8a26;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+
+/*classes for theme switching component*/
+/* From Uiverse.io by catraco */ 
+/*------ Settings ------*/
+.container {
+  --color: white;
+  --size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--accent);
+}
+
+.container .moon {
+  position: absolute;
+  fill: white;
+  animation: keyframes-fill .5s;
+}
+
+.container .sun {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill .5s;
+}
+
+/* ------ On check event ------ */
+.container input:checked ~ .moon {
+  display: none;
+}
+
+.container input:checked ~ .sun {
+  display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+  0% {
+    transform: rotate(-360deg) scale(0);
+    opacity: 0;
+  }
+
+  75% {
+    transform: rotate(25deg);
+  }
+}
+
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  height: 5px; /* Increase the thickness of the line */
+  width: 0;
+  background-color: var(--accent);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: width 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+
+/* classes for Navigation menu icon */
+
+.nav-icon input[type = "checkbox"] {
+
+  display: none;
+  visibility: hidden;
+}
+
+.bar {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  /* width: 50px;
+  height: 40px; */
+}
+
+.bar span {
+  position: absolute;
+  width: 45px;
+  height: 7px;
+  background: var(--textBody);
+  border-radius: 100px;
+  display: inline-block;
+  transition: 0.3s ease;
+  left: 0;
+}
+
+.bar span.top {
+  top: 0;
+}
+
+.bar span.middle {
+  top: 17px;
+}
+
+.bar span.bottom {
+  bottom: 0;
+}
+
+.nav-icon input[type]:checked ~ span.top {
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 48px;
+  left: 5px;
+}
+
+.nav-icon input[type]:checked ~ span.bottom {
+  transform: rotate(-45deg);
+  transform-origin: top left;
+  width: 48px;
+  bottom: -1px;
+  box-shadow: 0 0 10px #495057;
+}
+
+.nav-icon input[type]:checked ~ span.middle {
+  transform: translateX(-20px);
+  opacity: 0;
+}
