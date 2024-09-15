@@ -69,7 +69,7 @@ const Intro = () => {
                     </Transition>
                   ))}
                 </div>
-          <div key={theme} className=" hidden lg:block lg:Intro-line lg:absolute lg:bg-white lg:h-[2px] lg:animate-grow lg:ml-[28rem] "></div>
+          <div key={theme} className=" hidden lg:block lg:Intro-line lg:absolute lg:bg-white lg:h-[2px] lg:animate-grow lg:ml-[31rem] "></div>
 
         </div>
         <div className="Intro-row text-[60px]  sm:text-[80px] lg:text-[100px] font-gotham font-medium">

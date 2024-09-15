@@ -40,7 +40,7 @@ function shuffle(content, output, position) {
   });
 }
 
-export const DecoderText = memo(
+const DecoderText = memo(
   ({ text, start = true, delay: startDelay = 0, className, ...rest }) => {
     const output = useRef([{ type: CharType.Glyph, value: '' }]);
     const container = useRef();
@@ -99,3 +99,6 @@ export const DecoderText = memo(
     );
   }
 );
+
+DecoderText.displayName = 'DecoderText';
+export { DecoderText };

@@ -8,7 +8,7 @@ const ThemeSwitch = () => {
     // Initial server side rendering with theme = 'dark' was causing the checkbox to remain unchecked by default. So when I refreshed the page, even though theme was light, checkbox remained false and showed a moon icon. The useEffect below solves this issue. by setting the checkbox to true if theme is 'light' on initial render.
     useEffect(()=>{
       checkRef.current.checked = theme === 'light' ? true : false;
-    },[])
+    })
  
   return (
         <label className="container fixed top-10 right-10 z-30 border-transparent flex h-16 w-16 justify-center items-center  border-2  hover:bg-gray-500 hover:rounded-md hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-lg hover:bg-opacity-10" >

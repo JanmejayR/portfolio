@@ -1,4 +1,4 @@
-export default [
+const projects =  [
     {
         id:1,
         projectImage: {
@@ -58,3 +58,5 @@ export default [
    
 
 ]
+
+export default projects;
