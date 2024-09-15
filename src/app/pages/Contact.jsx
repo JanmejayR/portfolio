@@ -44,7 +44,7 @@ const Contact = ({windowSize}) => {
         }}
         className="    bg-gradient-to-br from-slate-300 to-slate-500 pt-16 pb-8  sm:py-16 bg-clip-text text-center text-4xl font-medium tracking-tight text-[var(--MyProjects)] md:text-6xl ">
         How about we connect ?
-        <p className=' text-xl'> ( Don&apos;t be shy, maybe I won't bite )</p>
+        <p className=' text-xl'> ( Don&apos;t be shy, maybe I won&apos;t bite )</p>
       </motion.h1>
 
       <section className='flex flex-col items-center  justify-center xl:flex-row  xl:h-[40rem] xl:justify-between  xl:ml-32   '>
