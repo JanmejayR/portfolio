@@ -14,7 +14,7 @@ export default function Earth(props) {
 
   useFrame(()=>{
     if(groupRef.current){
-      groupRef.current.rotation.y -= 0.006;
+      groupRef.current.rotation.y -= 0.0025;
     }
   })
   return (

@@ -11,7 +11,7 @@ const Contact = ({windowSize}) => {
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
-  //service_12s1q1s
+
 
   const handleSubmit = async(e) =>{
     e.preventDefault();
@@ -44,16 +44,16 @@ const Contact = ({windowSize}) => {
         }}
         className="    bg-gradient-to-br from-slate-300 to-slate-500 pt-16 pb-8  sm:py-16 bg-clip-text text-center text-4xl font-medium tracking-tight text-[var(--MyProjects)] md:text-6xl ">
         How about we connect ?
-        <p className=' text-xl'> ( Don&apos;t be shy, maybe I won&apos;t bite )</p>
+        <p className=' text-sm sm:text-xl'> ( Don&apos;t be shy, I won&apos;t bite (probably) )</p>
       </motion.h1>
 
       <section className='flex flex-col items-center  justify-center xl:flex-row  xl:h-[40rem] xl:justify-between  xl:ml-32   '>
       
-      <div className=' w-[80%] sm:w-[70%]  md:w-[60%] order-2 xl:order-none h-[38rem] lg:w-[40%] xl:ml-10'>
-      <form className='  flex h-full flex-col justify-center items-center gap-y-7   border-[3px] border-[var(--textBody)]  bg-gray-500 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10   ' onSubmit={handleSubmit}>
+      <div className=' w-[90%] sm:w-[70%]  md:w-[60%] order-2 xl:order-none h-[20rem] sm:h-[38rem] lg:w-[40%] xl:ml-10'>
+      <form className='  flex h-full flex-col justify-center items-center gap-y-2 sm:gap-y-7   border-[3px] border-[var(--textBody)]  bg-gray-500 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10   ' onSubmit={handleSubmit}>
 
 
-      <label className="space-y-3 flex flex-col">
+      <label className=" sm:space-y-3 flex flex-col">
               <span className=" text-sm sm:text-lg text-[var(--text)]">Full Name</span>
               <input
                 type="text"
@@ -61,12 +61,12 @@ const Contact = ({windowSize}) => {
                 value={form.name}
                 onChange={handleChange}
                 required
-                className=" w-48 sm:w-96 bg-[var(--inputBg)] px-5 py-2 min-h-12  rounded-lg placeholder:text-[var(--MyProjects)] placeholder:opacity-50 text-sm sm:text-lg text-[var(--textBody)] shadow-black-200 shadow-2xl border-2 border-transparent placeholder:text-[11px] sm:placeholder:text-lg  focus:border-[var(--textBody)] focus:outline-none "
+                className=" w-72 sm:w-96 bg-[var(--inputBg)] px-5 min-h-8 sm:py-2 sm:min-h-12  rounded-lg placeholder:text-[var(--MyProjects)] placeholder:opacity-50 text-sm sm:text-lg text-[var(--textBody)] shadow-black-200 shadow-2xl border-2 border-transparent placeholder:text-[11px] sm:placeholder:text-lg  focus:border-[var(--textBody)] focus:outline-none "
                 placeholder="ex., Yuri Tarded"
               />
             </label>
 
-            <label className="space-y-3 flex flex-col">
+            <label className=" sm:space-y-3 flex flex-col">
               <span className="text-sm sm:text-lg text-[var(--text)]">Email address</span>
               <input
                 type="email"
@@ -74,12 +74,12 @@ const Contact = ({windowSize}) => {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className=" w-48 sm:w-96 bg-[var(--inputBg)] px-5 py-2 min-h-12  rounded-lg placeholder:text-[var(--MyProjects)] placeholder:opacity-50 text-sm sm:text-lg text-[var(--textBody)] shadow-black-200 shadow-2xl border-2 border-transparent placeholder:text-[11px] sm:placeholder:text-lg  focus:border-[var(--textBody)] focus:outline-none"
+                className=" w-72 sm:w-96 bg-[var(--inputBg)] px-5 min-h-8 sm:py-2 sm:min-h-12  rounded-lg placeholder:text-[var(--MyProjects)] placeholder:opacity-50 text-sm sm:text-lg text-[var(--textBody)] shadow-black-200 shadow-2xl border-2 border-transparent placeholder:text-[11px] sm:placeholder:text-lg  focus:border-[var(--textBody)] focus:outline-none"
                 placeholder="ex., YuriTarded@gmail.com"
               />
             </label>
 
-            <label className="space-y-3 flex flex-col">
+            <label className=" sm:space-y-3 flex flex-col">
               <span className="text-sm sm:text-lg text-[var(--text)]">Your message</span>
               <textarea
                 name="message"
@@ -87,12 +87,12 @@ const Contact = ({windowSize}) => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className=" w-48 sm:w-96 bg-[var(--inputBg)] px-5 py-2 min-h-12  rounded-lg placeholder:text-[var(--MyProjects)] placeholder:opacity-50 text-sm sm:text-lg text-[var(--textBody)] shadow-black-200 shadow-2xl border-2 border-transparent placeholder:text-[11px] sm:placeholder:text-lg  focus:border-[var(--textBody)] focus:outline-none"
+                className=" w-72 sm:w-96 bg-[var(--inputBg)] px-5 min-h-8 sm:py-2 sm:min-h-12  rounded-lg placeholder:text-[var(--MyProjects)] placeholder:opacity-50 text-sm sm:text-lg text-[var(--textBody)] shadow-black-200 shadow-2xl border-2 border-transparent placeholder:text-[11px] sm:placeholder:text-lg  focus:border-[var(--textBody)] focus:outline-none"
                 placeholder="Share your thoughts or inquiries..."
               />
             </label>
 
-            <button className=" w-48 sm:w-96 bg-[var(--msgBtn)] px-5 py-2 min-h-12  rounded-lg  text-sm sm:text-lg text-[var(--background)] font-medium shadow-black-200 shadow-2xl border-2 border-transparent  hover:bg-[var(--msgBtnHover)] transition-colors duration-300 ease-in-out " type="submit" >
+            <button className=" w-72 sm:w-96 bg-[var(--msgBtn)] px-5 min-h-8 sm:py-2 sm:min-h-12  rounded-lg  text-sm sm:text-lg text-[var(--background)] font-medium shadow-black-200 shadow-2xl border-2 border-transparent  hover:bg-[var(--msgBtnHover)] transition-colors duration-300 ease-in-out " type="submit" >
               Send Message
             </button>
         </form>

@@ -15,7 +15,7 @@ materials['Material.002'].needsUpdate = true;
 
 useFrame(()=>{
   if(groupRef.current){
-    groupRef.current.rotation.y -= 0.005;
+    groupRef.current.rotation.y -= 0.0025;
   }
 })
   return (

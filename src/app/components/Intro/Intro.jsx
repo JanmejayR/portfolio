@@ -45,12 +45,12 @@ const Intro = () => {
         </h2>
 
         <div className='flex items-center'>
-        <div className="Intro-row text-[60px]  sm:text-[80px] lg:text-[100px] font-gotham font-medium">
+        <div className="Intro-row text-[48px]  sm:text-[80px] lg:text-[100px] font-gotham font-medium">
                   {config.roles.map(item => (
                     <Transition
                       unmount
                       in={item === currentRole}
-                      timeout={{ enter: 3000, exit: 2000 }}
+                      timeout={{ enter: 4000, exit: 1000 }}
                       key={`${item}-${theme}`}
                     >
                       {({ status, nodeRef }) => (
@@ -77,7 +77,7 @@ const Intro = () => {
                     <Transition
                       unmount
                       in={item === currentDiscipline}
-                      timeout={{ enter: 3000, exit: 2000 }}
+                      timeout={{ enter: 4000, exit: 1000 }}
                       key={`${item}-${theme}`}
                     >
                       {({ status, nodeRef }) => (
