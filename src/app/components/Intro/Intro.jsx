@@ -1,3 +1,4 @@
+'use client'
 import React , { useState , useEffect , useContext} from 'react'
 import config from './config.json'
 import { useInterval } from '../../hooks/useInterval.js'
@@ -50,7 +51,7 @@ const Intro = () => {
                     <Transition
                       unmount
                       in={item === currentRole}
-                      timeout={{ enter: 4000, exit: 1000 }}
+                      timeout={{ enter: 3000, exit: 2000 }}
                       key={`${item}-${theme}`}
                     >
                       {({ status, nodeRef }) => (
@@ -77,7 +78,7 @@ const Intro = () => {
                     <Transition
                       unmount
                       in={item === currentDiscipline}
-                      timeout={{ enter: 4000, exit: 1000 }}
+                      timeout={{ enter: 3000, exit: 2000 }}
                       key={`${item}-${theme}`}
                     >
                       {({ status, nodeRef }) => (
@@ -101,3 +102,4 @@ const Intro = () => {
 }
 
 export default Intro
+
