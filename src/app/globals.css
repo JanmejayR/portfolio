@@ -190,33 +190,10 @@
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: var(--textLight);
-  /* margin-bottom: var(--space2XL); */
   margin-top: 0;
   font-weight: var(--fontWeightMedium);
   line-height: 1;
   opacity: 1;
-  /* transition: opacity var(--durationL) var(--bezierFastoutSlowin) 0.2s; */
-/* 
-  @media (min-width:2080px) {
-    font-size: calc((22 / 16) * 1rem);
-    margin-bottom: var(--spaceXL);
-  }
-
-  @media (min-width:1040px) {
-    font-size: calc((18 / 16) * 1rem);
-  }
-
-  @media (min-width:696px) {
-    margin-bottom: var(--spaceL);
-    letter-spacing: 0.2em;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  @media (max-width: 820px) and (max-height: 420px) {
-    margin-bottom: var(--spaceL);
-    margin-bottom: var(--spaceXL);
-  } */
 }
 
 
@@ -248,7 +225,7 @@
 }
 
 @keyframes introTextReveal {
-  0% {
+  0% {  
     color: color-mix(in lab, var(--text) 0%, transparent);
   }
   50% {
@@ -303,7 +280,6 @@
   opacity:1;
   background: var(--accent);
   animation-duration: 1.5s;
-    animation-delay: var(--delay);
     animation-fill-mode: forwards;
     animation-timing-function: var(--bezierFastoutSlowin);
     transform-origin: left;
@@ -312,28 +288,34 @@
   inset: 0 -0.02em 0 0;
   z-index: var(--zIndex1);
   will-change: transform;
+  color: var(--textTitle);
 }
 
 .Intro-word[data-plus='true']::before {
   content: '+';
   margin-right: 10px;
   opacity: 0.4;
+  color: var(--textTitle);
 }
 
 
 .Intro-word[data-status='entering'] {
+  color: var(--textTitle);
   animation-name: introTextReveal;
   opacity:1;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .Intro-word[data-status='entering']::after {
+    color: var(--textTitle);
     animation-name: reveal;
     opacity:1;
   }
 }
 
 .Intro-word[data-status='entered'] {
+  /* color: var(--textTitle); */
   color: var(--textTitle);
   opacity:1;
 }
@@ -342,16 +324,20 @@
   opacity: 1;
   transform: scale3d(0, 0, 1);
   transform-origin: right;
+  color: var(--textTitle);
 }
 
 .Intro-word[data-status='exiting'] {
   color: var(--textTitle);
+  
   opacity: 0;
   position: absolute;
   top: 0;
   z-index: var(--zIndex0);
 
 }
+
+
 
 
 

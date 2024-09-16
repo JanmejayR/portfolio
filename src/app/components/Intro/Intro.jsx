@@ -14,8 +14,8 @@ const Intro = () => {
   const [rolesIndex, setRolesIndex] = useState(0);
   const [tickCount, setTickCount] = useState(0);
 
-  const currentDiscipline = config.disciplines.find((item, index) => index === disciplineIndex);
-  const currentRole = config.roles.find((item, index) => index === rolesIndex);
+  // const currentDiscipline = ;
+  // const currentRole = ;
 
   useInterval(
     () => {
@@ -40,17 +40,17 @@ const Intro = () => {
   }, [theme]);
 
   return (
-    <section className='absolute left-2 lg:top-[14rem] h-[20rem] lg:left-[26rem]'>
-        <h2 className=' Intro-name sm:block text-sm sm:text-2xl lg:text-3xl font-gotham    mb-4 lg:mb-8 '>
+    <section className='absolute left-2 lg:top-[14rem] h-[20rem] lg:left-[26rem] '>
+        <h2 className=' Intro-name sm:block text-sm sm:text-2xl lg:text-[27px] font-gotham    mb-4 lg:mb-4 '>
             <DecoderText text={config.name} delay={500} key={theme} />
         </h2>
 
-        <div className='flex items-center'>
+        <div className='flex items-center pl-16'>
         <div className="Intro-row text-[48px]  sm:text-[80px] lg:text-[100px] font-gotham font-medium">
                   {config.roles.map(item => (
                     <Transition
                       unmount
-                      in={item === currentRole}
+                      in={item === config.roles[rolesIndex]}
                       timeout={{ enter: 3000, exit: 2000 }}
                       key={`${item}-${theme}`}
                     >
@@ -73,15 +73,16 @@ const Intro = () => {
           <div key={theme} className=" hidden lg:block lg:Intro-line lg:absolute lg:bg-white lg:h-[2px] lg:animate-grow lg:ml-[31rem] "></div>
 
         </div>
-        <div className="Intro-row text-[60px]  sm:text-[80px] lg:text-[100px] font-gotham font-medium">
+        <div className="pl-16 Intro-row text-[60px]  sm:text-[80px] lg:text-[100px] font-gotham font-medium">
                   {config.disciplines.map(item => (
                     <Transition
                       unmount
-                      in={item === currentDiscipline}
+                      in={item === config.disciplines[disciplineIndex]}
                       timeout={{ enter: 3000, exit: 2000 }}
                       key={`${item}-${theme}`}
                     >
                       {({ status, nodeRef }) => (
+                        
                         <span
                           aria-hidden
                           ref={nodeRef}
