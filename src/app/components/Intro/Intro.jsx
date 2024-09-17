@@ -45,7 +45,7 @@ const Intro = () => {
             <DecoderText text={config.name} delay={500} key={theme} />
         </h2>
 
-        <div className='flex items-center pl-16'>
+        <div className='flex items-center pl-8 sm:pl-16'>
         <div className="Intro-row text-[48px]  sm:text-[80px] lg:text-[100px] font-gotham font-medium">
                   {config.roles.map(item => (
                     <Transition
@@ -73,7 +73,7 @@ const Intro = () => {
           <div key={theme} className=" hidden lg:block lg:bg-[var(--textLight)]  lg:absolute  lg:h-[2px] lg:animate-grow lg:ml-[31rem] "></div>
 
         </div>
-        <div className="pl-16 Intro-row text-[60px]  sm:text-[80px] lg:text-[100px] font-gotham font-medium">
+        <div className=" pl-8 sm:pl-16 Intro-row text-[48px]  sm:text-[80px] lg:text-[100px] font-gotham font-medium">
                   {config.disciplines.map(item => (
                     <Transition
                       unmount
