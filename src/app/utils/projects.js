@@ -10,7 +10,7 @@ const projects =  [
         title: "Quick Subs",
         description : "It is an AI subtitle embedder that takes a video (all exts supported) and embeds subtitles of your desired language to it. It is lightweight and uses ffmpeg wasm for audio extraction and subtitle embedding and assemblyAI and DeepL apis for translation.", 
         github: "https://github.com/JanmejayR/QuickSubs",
-        live: "https://quicksubs-production.up.railway.app", 
+        live: "https://quick-subs-production.up.railway.app/signup", 
         frameworkIcons : []
     },
     {
