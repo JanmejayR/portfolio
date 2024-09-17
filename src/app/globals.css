@@ -185,6 +185,17 @@
 }
 
 
+// loading animation for earth and moon
+.canvas-loader {
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
+}
 
 .Intro-name {
   text-transform: uppercase;
@@ -210,9 +221,7 @@
   }
 }
 
-.Intro-line {
-  background: color-mix(in lab, var(--text) 30%, transparent);
-}
+
 
 .Intro-row {
   display: flex;
