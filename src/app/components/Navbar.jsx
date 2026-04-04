@@ -103,7 +103,7 @@ const Navbar = ({ windowSize }) => {
               : " space-y-20 "
           }  font-gotham font-bold`}
         >
-          <li
+          {/* <li
             className={`nav-item ${
               navIconClick && windowSize.width < 1024 ? "" : " -rotate-90"
             }`}
@@ -111,7 +111,7 @@ const Navbar = ({ windowSize }) => {
             <a href="/Janmejay_SD26.pdf" download onClick={handleNavIconClick}>
               Resume
             </a>
-          </li>
+          </li> */}
           <li
             className={`nav-item ${
               navIconClick && windowSize.width < 1024 ? "" : " -rotate-90"
