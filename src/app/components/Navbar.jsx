@@ -162,7 +162,6 @@ const Navbar = ({ windowSize }) => {
           } justify-center items-center`}
         >
           {githubSvg}
-          /* {linkedinsvg} */
         </div>
       </motion.nav>
     </>
